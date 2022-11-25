@@ -1,13 +1,16 @@
 import { Navbar, NavDropdown, Nav, Container } from "react-bootstrap";
 import React from "react";
+import logo from "../assets/netflix_logo.png";
 
 class Header extends React.Component {
   render() {
     return (
       <header>
-        <Navbar bg="dark" expand="lg">
+        <Navbar className="navbar navbar-expand-lg navbar-dark">
           <Container fluid>
-            <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+            <Navbar.Brand>
+              <img src={logo} id="logo" />
+            </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
