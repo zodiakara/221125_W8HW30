@@ -9,9 +9,9 @@ function App() {
   return (
     <div>
       <Header />
-      <GalleryItem description="Movie Series" />
-      <GalleryItem description="Christmas Specials" />
-      <GalleryItem description="New Releases" />
+      <GalleryItem description={"My favourite series"} />
+      <GalleryItem description={"Christmas Specials"} />
+      <GalleryItem description={"New Releases"} />
       <FooterItem />
     </div>
   );
