@@ -1,25 +1,25 @@
 import "./App.css";
 import Header from "./components/Header";
-import GalleryItem from "./components/GalleryItem";
+import MoviesPage from "./components/MoviesPage";
 import FooterItem from "./components/FooterItem";
+import TvShows from "./components/TvShows";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../src/assets/styles.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div>
-      <Header />
-      <GalleryItem
-        description={"My favourite series"}
-        moviesSearch={"harry%20potter"}
-      />
-      <GalleryItem
-        description={"Christmas Specials"}
-        moviesSearch={"christmas"}
-      />
-      <GalleryItem description={"New Releases"} moviesSearch={"jackass"} />
-      <FooterItem />
-    </div>
+    <BrowserRouter>
+      <div>
+        <Header />
+        <Routes>
+          <Route element={<TvShows />} path="/tv-shows"></Route>
+          <Route element={<MoviesPage />} path="/movies"></Route>
+        </Routes>
+
+        <FooterItem />
+      </div>
+    </BrowserRouter>
   );
 }
 

@@ -1,3 +1,4 @@
+import SingleMovie from "./SingleMovie";
 import React from "react";
 import { Carousel, CarouselItem, Col, Row } from "react-bootstrap";
 
@@ -64,19 +65,15 @@ class GalleryItem extends React.Component {
   render() {
     return (
       <Carousel>
-        <h4>{this.props.description}</h4>
+        <h2 className="galleryHeader my-2">{this.props.description}</h2>
+
         {this.state.movies.map((movies) => (
           <CarouselItem>
-            <div className="movie-row">
+            <div className="row">
               <Row>
                 {movies.map((movie) => (
                   <Col md={2}>
-                    <div className="">
-                      <a href="">
-                        <img src={movie.Poster} alt={movie.Title} />
-                      </a>
-                      <h6>{movie.Title}</h6>
-                    </div>
+                    <SingleMovie title={movie.Title} img={movie.Poster} />
                   </Col>
                 ))}
               </Row>
