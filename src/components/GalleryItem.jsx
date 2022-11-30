@@ -65,7 +65,7 @@ class GalleryItem extends React.Component {
   render() {
     return (
       <Carousel>
-        <h2 className="galleryHeader my-2">{this.props.description}</h2>
+        <h2 className="galleryHeader my-4">{this.props.description}</h2>
 
         {this.state.movies.map((movies) => (
           <CarouselItem>
@@ -73,7 +73,11 @@ class GalleryItem extends React.Component {
               <Row>
                 {movies.map((movie) => (
                   <Col md={2}>
-                    <SingleMovie title={movie.Title} img={movie.Poster} />
+                    <SingleMovie
+                      title={movie.Title}
+                      img={movie.Poster}
+                      id={movie.imdbID}
+                    />
                   </Col>
                 ))}
               </Row>

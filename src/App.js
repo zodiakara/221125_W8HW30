@@ -1,6 +1,7 @@
 import "./App.css";
 import Header from "./components/Header";
 import MoviesPage from "./components/MoviesPage";
+import MovieDetails from "./components/MovieDetails";
 import FooterItem from "./components/FooterItem";
 import TvShows from "./components/TvShows";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route element={<TvShows />} path="/tv-shows"></Route>
           <Route element={<MoviesPage />} path="/movies"></Route>
+          <Route element={<MovieDetails />} path="/details/:id" />
         </Routes>
 
         <FooterItem />
