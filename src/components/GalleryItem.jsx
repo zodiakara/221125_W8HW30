@@ -14,7 +14,7 @@ class GalleryItem extends React.Component {
 
   searchMovies = async () => {
     try {
-      let uri = `http://www.omdbapi.com/?i=tt3896198&apikey=a7f77e9&s=${this.props.moviesSearch}`;
+      let uri = `http://www.omdbapi.com/?apikey=a7f77e9&s=${this.props.moviesSearch}`;
       let response = await fetch(uri);
 
       if (response.ok) {

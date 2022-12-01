@@ -1,14 +1,34 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
+/*
+Query Parameter
+sdggsdgasdg?name=Peter&name2=John
+
+{
+  name:Peter,
+  name2:John
+}
+URL parameter
+
+sdfsdfasdfsd/:name/:name2
+sdafdsaf/Peter/John
+
+{
+  name:Peter,
+  name2:John
+}
+
+*/
+
 const MovieDetails = () => {
   const [movieData, setMovieData] = useState({});
-  const { movieID } = useParams();
+  const { id } = useParams();
 
-  const fetchMovie = async (id) => {
+  const fetchMovie = async (movieId) => {
     try {
       let response = await fetch(
-        `http://www.omdbapi.com/?i=tt3896198&apikey=a7f77e9&s=&i${id}`
+        `http://www.omdbapi.com/?apikey=a7f77e9&i=${movieId}`
       );
 
       if (response.ok) {
@@ -22,8 +42,8 @@ const MovieDetails = () => {
   };
 
   useEffect(() => {
-    fetchMovie(movieID);
-  }, [movieID]);
+    fetchMovie(id);
+  }, [id]);
   return (
     <div>
       {movieData.Title}
